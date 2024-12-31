@@ -1,0 +1,16 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npm run build",
+    "deploy": "npm run build && git add . && git commit -m 'Deploy' && git push",
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "ejs-cli": "^2.2.3"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

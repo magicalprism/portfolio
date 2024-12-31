@@ -1,0 +1,63 @@
+:root {
+    --primary-accent: #3618a1;
+    /*light pallete*/
+    --primary-dark: #1b1a1a;
+    --lines-light: #f0eded;
+    /*dark pallete*/
+    --primary-light: #f7f7f7;
+    --lines-dark: #313131;
+}
+@font-face {
+    font-family: EditorsNote;
+    src: url(/fonts/editorsNote-light.ttf);
+  }
+  @font-face {
+    font-family: EditorsNote;
+    src: url(/fonts/editorsNote-light-italic.ttf);
+    font-style:italic;
+  }
+
+
+  body {
+    font-size: 1.2rem;
+    font-family: -apple-system,BlinkMacSystemFont, "Poppins","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+
+h1, h2 {
+    font-family: EditorsNote;
+    font-weight: 300;
+}
+header {
+    z-index: 1000;
+}
+.content {
+    padding-top: 80px; /* Adjust based on your header height */
+  }
+.nav-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+/*Buttons*/
+.btn-bd-primary {
+    --bs-btn-bg: var(--primary-accent);
+    --bs-btn-border-color: var(--primary-accent);
+}
+
+/* Hide dynamic rows by default */
+.dynamic-row {
+    display: none;
+  }
+  
+  /* Hide dynamic sections within rows by default */
+  .dynamic-section {
+    display: none;
+  }
+
+  /*Effects*/
+.glass {
+    box-shadow: rgba(255, 255, 255, 0.18) inset 0px 2px 20px 1px, rgba(0, 0, 0, 0.1) 0px 4px 30px 0px;
+    backdrop-filter: blur(7.2px);
+    background-color: rgba(255, 255, 255, 0.47);
+    border-top: solid 2px rgba(255, 255, 255, 0.753);
+    border-left: solid 2px rgba(255, 255, 255, 0.575);
+}

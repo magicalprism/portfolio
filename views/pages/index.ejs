@@ -1,0 +1,18 @@
+<%
+    const pageMeta = {
+        title: "Homepage",
+        permalink: "/index.html",
+        lastmod: "2024-12-31",
+        priority: 0.7
+    };
+%>
+<script id="pageMeta" type="application/json" style="display: none;">
+    <%= JSON.stringify(pageMeta) %>
+</script>
+<%- include('../partials/header.ejs', { title: pageMeta.title, pageMeta: pageMeta }) %>
+<!-- Contact Page HTML -->
+<div class="container content">
+    <h1>Homepage</h1>
+    <p>Welcome to our website!</p>
+</div>
+<%- include('../partials/footer.ejs') %>
