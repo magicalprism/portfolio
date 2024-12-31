@@ -18,21 +18,59 @@
   }
 
 
-  body {
+body {
     font-size: 1.2rem;
     font-family: -apple-system,BlinkMacSystemFont, "Poppins","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 }
+/*Text Styles*/
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 10px 0;
+}
+.xlarge-h {
+    font-size: 10rem;
+    letter-spacing: -1px;
+    font-weight: 500;
     font-family: EditorsNote;
-    font-weight: 300;
+    line-height:1em;
+    text-shadow: 2px 2px 2px rgb(212, 116, 71);
+    color: var(--primary-dark)
+}
+.large-h {
+    font-size: 4rem;
+    font-family: EditorsNote;
+
+}
+.large-medium-h {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: EditorsNote;
+}
+.medium-h {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.small-h {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.xsmall-h {
+    font-size: 0.75rem;
+} 
+.large-bdy-txt {
+    font-size: 1.2rem;
+}
+.bdy-txt {
+    font-size: 1.1rem;
 }
 header {
     z-index: 1000;
 }
+/*
 .content {
-    padding-top: 80px; /* Adjust based on your header height */
+    padding-top: 80px; /* Adjust based on your header height
   }
+  */
 .nav-link {
     color: var(--primary-dark);
     text-decoration: none;
@@ -41,6 +79,19 @@ header {
 .btn-bd-primary {
     --bs-btn-bg: var(--primary-accent);
     --bs-btn-border-color: var(--primary-accent);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--primary-accent);
+    --bs-btn-border-color: var(--primary-accent);
+    padding: 15px 20px;
+}
+
+.btn-outline-primary {
+    background-color: rgb(235, 235, 235);
+    color: var(--primary-accent);
+    --bs-btn-border-color: var(--primary-accent);
+    padding: 15px 20px;
 }
 
 /* Hide dynamic rows by default */
@@ -52,6 +103,16 @@ header {
   .dynamic-section {
     display: none;
   }
+  /*Hero section homepagew*/
+  #top {
+    background-position: contain;
+    min-height: calc(100vh + 100px);
+    background: url(/images/hero.webp), right top;
+    background-size: 150%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+}
 
   /*Effects*/
 .glass {
@@ -60,4 +121,20 @@ header {
     background-color: rgba(255, 255, 255, 0.47);
     border-top: solid 2px rgba(255, 255, 255, 0.753);
     border-left: solid 2px rgba(255, 255, 255, 0.575);
+}
+
+/*nav*/
+.glass-header {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar {
+    height:50px;
+    margin-bottom: -100px;
+    margin-top: 20px;
+    
+    
 }

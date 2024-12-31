@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Base URL for your website
-const BASE_URL = 'https://www.example.com';
+const BASE_URL = 'https://getchromacreative.com';
 
 // Directory where HTML files are stored
 const PUBLIC_DIR = path.join(__dirname, 'public');
