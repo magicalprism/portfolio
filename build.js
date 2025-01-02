@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Paths
-const PAGES_DIR = path.join(__dirname, 'views', 'pages');
+const PAGES_DIR = path.join(__dirname, 'views', 'pages', 'partials');
 const OUTPUT_DIR = path.join(__dirname, 'public');
 
 // Ensure the output directory exists

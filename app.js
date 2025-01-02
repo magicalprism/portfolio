@@ -11,6 +11,8 @@ app.set('views', path.join(__dirname, 'views')); // Set the views directory
 
 // Serve static files (e.g., CSS, JS, images) from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/partials', express.static(path.join(__dirname, 'views/partials')));
+
 
 // Define routes
 app.get('/', (req, res) => {

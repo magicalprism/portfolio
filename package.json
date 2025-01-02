@@ -5,7 +5,7 @@
     "build": "node build.js",
     "start": "npm run build",
     "deploy": "npm run build && git add . && git commit -m 'Deploy' && git push",
-    "dev": "nodemon --watch views/pages --ext ejs,js --exec \"node build.js && node app.js\""
+    "dev": "nodemon --watch views --ext ejs,js,webp,jpeg,png,ttf,css --exec \"node app.js\""
   },
   "devDependencies": {
     "ejs-cli": "^2.2.3",

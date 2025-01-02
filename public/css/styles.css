@@ -27,6 +27,10 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     margin: 0 0 10px 0;
 }
+
+a {
+    color: var(--primary-accent);
+}
 .xlarge-h {
     font-size: 10rem;
     letter-spacing: -1px;
@@ -55,13 +59,14 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 400;
 }
 .xsmall-h {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1em;
 } 
 .large-bdy-txt {
     font-size: 1.2rem;
 }
 .bdy-txt {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 header {
     z-index: 1000;
@@ -71,10 +76,11 @@ header {
     padding-top: 80px; /* Adjust based on your header height
   }
   */
-.nav-link {
-    color: var(--primary-dark);
-    text-decoration: none;
+/*Backgrounds*/
+.bg-light {
+    background-color: var(--primary-light);
 }
+
 /*Buttons*/
 .btn-bd-primary {
     --bs-btn-bg: var(--primary-accent);
@@ -84,14 +90,12 @@ header {
 .btn-primary {
     --bs-btn-bg: var(--primary-accent);
     --bs-btn-border-color: var(--primary-accent);
-    padding: 15px 20px;
 }
 
 .btn-outline-primary {
     background-color: rgb(235, 235, 235);
     color: var(--primary-accent);
     --bs-btn-border-color: var(--primary-accent);
-    padding: 15px 20px;
 }
 
 /* Hide dynamic rows by default */
@@ -105,13 +109,20 @@ header {
   }
   /*Hero section homepagew*/
   #top {
-    background-position: contain;
-    min-height: calc(100vh + 100px);
-    background: url(/images/hero.webp), right top;
-    background-size: 150%;
-    background-position: 100%;
+    min-height: calc(100vh + 30px);
+    background: url(/images/hero-bg.jpg);
     background-repeat: no-repeat;
-    padding-top: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero {
+    padding-top: 150px;
+    min-height: calc(100vh + 30px);
+}
+
+.vh100 {
+    min-height: calc(100vh - 150px);
 }
 
   /*Effects*/
@@ -136,5 +147,20 @@ header {
     margin-bottom: -100px;
     margin-top: 20px;
     
-    
+}
+.nav-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+/*Icons*/
+.i-features{
+    color: var(--primary-light);
+    width: 50px;
+}
+
+div .i-features {
+    background: var(--primary-accent);
+    padding: 10px;
+    border-radius: 50%;
 }

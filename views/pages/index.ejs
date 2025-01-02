@@ -6,14 +6,14 @@
         priority: 0.7
     };
 %>
-<script id="pageMeta" type="application/json" style="display: none;">
+<script id="pageMeta" type="application/json" style="display: none;"> 
     <%= JSON.stringify(pageMeta) %>
 </script>
 <%- include('../partials/header.ejs', { title: pageMeta.title, pageMeta: pageMeta }) %>
 <!-- Contact Page HTML -->
 <div class="content">
-    <section id="top">
-        <div class="container my-5">
+    <section class="d-flex justify-content-center align-items-center" id="top">
+        <div class="d-flex my-5">
         <div class="px-4 py-5 my-5 text-center">
             <h1 class="small-h">Development & Design by Lena Forrey</h1>
             <h2 class="xlarge-h"><em>Captivate</em></h2>
@@ -21,19 +21,19 @@
             
 
 
-            <a href="/contact.html" class="btn btn-primary btn-lg margin-top">Contact</a>
-            <a href="/portfolio.html" class="btn btn-outline-primary btn-lg margin-top">Portfolio</a>
+            <a href="/contact.html" class="btn btn-primary margin-top px-5 py-3">Contact</a>
+            <a href="/portfolio.html" class="btn btn-outline-primary px-5 py-3">Portfolio</a>
         </div>
         
         
     </section>
     <section id="sub-hero">
-        <div class="container  px-4 py-5">
-            <div class="row flex-lg-row align-items-center g-5 py-5">
-              <div class="col-lg-6">
+        <div class="container px-4 py-5">
+            <div class="d-flex gap-5 align-items-center g-5 py-5">
+              <div class="col-4">
                 <h2 class="large-medium-h">Responsive left-aligned hero with image</h2>
               </div>
-              <div class="col-10 col-sm-8 col-lg-6">
+              <div class="col">
                 <p>Imagine a world where your visions unfold into captivating digital landscapes. By blending vibrant design, deep research, and compelling stories, we create websites that connect, captivate and convert. Experience the surreal beauty of your visual story as we infuse your brand with the essence of who you are, turning your entrepreneurial visions into a vivid reality.</p>
               </div>
             </div>
@@ -139,14 +139,14 @@
                     </div>
                   </div>
                 </div>
-            </div>    
+            </div>  
               </div>
     </section>
     <section id="about">
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row align-items-center g-5 py-5">
               <div class="col-lg-6">
-                <img src="/images/lena.jpg" width="100" class="img-fluid round" alt="...">
+                <img src="/images/lena.jpg" width="100" class="img-thumbnail" alt="Lena Forrey">
                 <h2 class="large-h">Lena <em>Forrey</em></h2>
                 <div>
                     <h4 class="xsmall-h">SOCIALS</h4>

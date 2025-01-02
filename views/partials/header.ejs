@@ -10,10 +10,12 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/charts.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <title><%= title %></title>
     </head>
     <body>
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar">
         <div class="container glass menu rounded-pill p-2">
           <header class="d-flex glass-header">
             <div>
@@ -21,7 +23,8 @@
                     <img src="/images/logo.png" height="50" alt="Lena Forrey Logo" class="logo">
                 </a>
               </div>
-              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <div>
+              <ul class="nav d-flex mb-2 justify-content-center mb-md-0">
                 <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
                 <li><a href="/proposal.html" class="nav-link px-2">Proposal</a></li>
                 <li><a href="/form.html" class="nav-link px-2">Form</a></li>
@@ -29,10 +32,10 @@
                 <li><a href="/portfolio.html" class="nav-link px-2">Portfolio</a></li>
                 <li><a href="/contact.html" class="nav-link px-2">Contact</a></li>
               </ul>
-        
-              <div class="col-md-3 text-end">
+            </div>
+              <div class="d-flex">
                 
-                <button type="button" class="btn btn-lg btn-primary btn-bd-primary px-3 rounded-pill">Sign-up</button>
+                <button type="button" class="btn btn-primary rounded-pill px-4 py-3 me-1">Sign-up</button>
               </div>
             </header>
           </div>
