@@ -12,7 +12,7 @@
       {
         "id": "b2c-conversions",
         "tags": ["industry:b2c", "problem:conversions"],
-        "partial": "/partials/b2c-conversions.ejs"
+        "partial": "/partials/b2c/b2c-conversions.ejs"
       },
       {
         "id": "coaching",
@@ -178,52 +178,52 @@
       {
         "id": "b2b-presence",
         "tags": ["industry:b2b", "problem:presence"],
-        "partial": "/partials/b2b-presence.ejs"
+        "partial": "/partials/b2b/b2b-presence.ejs"
       },
       {
         "id": "b2b-conversions",
         "tags": ["industry:b2b", "problem:conversions"],
-        "partial": "/partials/b2b-conversions.ejs"
+        "partial": "/partials/b2b/b2b-conversions.ejs"
       },
       {
         "id": "b2b-tools",
         "tags": ["industry:b2b", "problem:tools"],
-        "partial": "/partials/b2b-tools.ejs"
+        "partial": "/partials/b2b/b2b-tools.ejs"
       },
       {
         "id": "b2b-outdated",
         "tags": ["industry:b2b", "problem:outdated"],
-        "partial": "/partials/b2b-outdated.ejs"
+        "partial": "/partials/b2b/b2b-outdated.ejs"
       },
       {
         "id": "b2b-performance",
         "tags": ["industry:b2b", "problem:performance"],
-        "partial": "/partials/b2b-performance.ejs"
+        "partial": "/partials/b2b/b2b-performance.ejs"
       },
       {
         "id": "b2b-accessibility",
         "tags": ["industry:b2b", "problem:accessibility"],
-        "partial": "/partials/b2b-accessibility.ejs"
+        "partial": "/partials/b2b/b2b-accessibility.ejs"
       },
       {
         "id": "b2b-security",
         "tags": ["industry:b2b", "problem:security"],
-        "partial": "/partials/b2b-security.ejs"
+        "partial": "/partials/b2b/b2b-security.ejs"
       },
       {
         "id": "b2b-new",
         "tags": ["industry:b2b", "website:new"],
-        "partial": "/partials/b2b-new.ejs"
+        "partial": "/partials/b2b/b2b-new.ejs"
       },
       {
         "id": "b2b-redesign",
         "tags": ["industry:b2b", "website:redesign"],
-        "partial": "/partials/b2b-redesign.ejs"
+        "partial": "/partials/b2b/b2b-redesign.ejs"
       },
       {
         "id": "b2b-combination",
         "tags": ["industry:b2b", "website:combination"],
-        "partial": "/partials/b2b-combination.ejs"
+        "partial": "/partials/b2b/b2b-combination.ejs"
       },
 
 
@@ -235,48 +235,48 @@
       {
         "id": "b2c-presence",
         "tags": ["industry:b2c", "problem:presence"],
-        "partial": "/partials/b2c-presence.ejs"
+        "partial": "/partials/b2c/b2c-presence.ejs"
       },
 
       {
         "id": "b2c-tools",
         "tags": ["industry:b2c", "problem:tools"],
-        "partial": "/partials/b2c-tools.ejs"
+        "partial": "/partials/b2c/b2c-tools.ejs"
       },
       {
         "id": "b2c-outdated",
         "tags": ["industry:b2c", "problem:outdated"],
-        "partial": "/partials/b2c-outdated.ejs"
+        "partial": "/partials/b2c/b2c-outdated.ejs"
       },
       {
         "id": "b2c-performance",
         "tags": ["industry:b2c", "problem:performance"],
-        "partial": "/partials/b2c-performance.ejs"
+        "partial": "/partials/b2c/b2c-performance.ejs"
       },
       {
         "id": "b2c-accessibility",
         "tags": ["industry:b2c", "problem:accessibility"],
-        "partial": "/partials/b2c-accessibility.ejs"
+        "partial": "/partials/b2c/b2c-accessibility.ejs"
       },
       {
         "id": "b2c-security",
         "tags": ["industry:b2c", "problem:security"],
-        "partial": "/partials/b2c-security.ejs"
+        "partial": "/partials/b2c/b2c-security.ejs"
       },
       {
         "id": "b2c-new",
         "tags": ["industry:b2c", "website:new"],
-        "partial": "/partials/b2c-new.ejs"
+        "partial": "/partials/b2c/b2c-new.ejs"
       },
       {
         "id": "b2c-redesign",
         "tags": ["industry:b2c", "website:redesign"],
-        "partial": "/partials/b2c-redesign.ejs"
+        "partial": "/partials/b2c/b2c-redesign.ejs"
       },
       {
         "id": "b2c-combination",
         "tags": ["industry:b2c", "website:combination"],
-        "partial": "/partials/b2c-combination.ejs"
+        "partial": "/partials/b2c/b2c-combination.ejs"
       },
 
 
@@ -285,102 +285,102 @@
       {
         "id": "coaching-presence",
         "tags": ["industry:coaching", "problem:presence"],
-        "partial": "/partials/coaching-presence.ejs"
+        "partial": "/partials/coaching/coaching-presence.ejs"
       },
       {
         "id": "coaching-conversions",
         "tags": ["industry:coaching", "problem:conversions"],
-        "partial": "/partials/coaching-conversions.ejs"
+        "partial": "/partials/coaching/coaching-conversions.ejs"
       },
       {
         "id": "coaching-tools",
         "tags": ["industry:coaching", "problem:tools"],
-        "partial": "/partials/coaching-tools.ejs"
+        "partial": "/partials/coaching/coaching-tools.ejs"
       },
       {
         "id": "coaching-outdated",
         "tags": ["industry:coaching", "problem:outdated"],
-        "partial": "/partials/coaching-outdated.ejs"
+        "partial": "/partials/coaching/coaching-outdated.ejs"
       },
       {
         "id": "coaching-performance",
         "tags": ["industry:coaching", "problem:performance"],
-        "partial": "/partials/coaching-performance.ejs"
+        "partial": "/partials/coaching/coaching-performance.ejs"
       },
       {
         "id": "coaching-accessibility",
         "tags": ["industry:coaching", "problem:accessibility"],
-        "partial": "/partials/coaching-accessibility.ejs"
+        "partial": "/partials/coaching/coaching-accessibility.ejs"
       },
       {
         "id": "coaching-security",
         "tags": ["industry:coaching", "problem:security"],
-        "partial": "/partials/coaching-security.ejs"
+        "partial": "/partials/coaching/coaching-security.ejs"
       },
       {
         "id": "coaching-new",
         "tags": ["industry:coaching", "website:new"],
-        "partial": "/partials/coaching-new.ejs"
+        "partial": "/partials/coaching/coaching-new.ejs"
       },
       {
         "id": "coaching-redesign",
         "tags": ["industry:coaching", "website:redesign"],
-        "partial": "/partials/coaching-redesign.ejs"
+        "partial": "/partials/coaching/coaching-redesign.ejs"
       },
       {
         "id": "coaching-combination",
         "tags": ["industry:coaching", "website:combination"],
-        "partial": "/partials/coaching-combination.ejs"
+        "partial": "/partials/coaching/coaching-combination.ejs"
       },
       {
         "id": "creative-presence",
         "tags": ["industry:creative", "problem:presence"],
-        "partial": "/partials/creative-presence.ejs"
+        "partial": "/partials/creative/creative-presence.ejs"
       },
       {
         "id": "creative-conversions",
         "tags": ["industry:creative", "problem:conversions"],
-        "partial": "/partials/creative-conversions.ejs"
+        "partial": "/partials/creative/creative-conversions.ejs"
       },
       {
         "id": "creative-tools",
         "tags": ["industry:creative", "problem:tools"],
-        "partial": "/partials/creative-tools.ejs"
+        "partial": "/partials/creative/creative-tools.ejs"
       },
       {
         "id": "creative-outdated",
         "tags": ["industry:creative", "problem:outdated"],
-        "partial": "/partials/creative-outdated.ejs"
+        "partial": "/partials/creative/creative-outdated.ejs"
       },
       {
         "id": "creative-performance",
         "tags": ["industry:creative", "problem:performance"],
-        "partial": "/partials/creative-performance.ejs"
+        "partial": "/partials/creative/creative-performance.ejs"
       },
       {
         "id": "creative-accessibility",
         "tags": ["industry:creative", "problem:accessibility"],
-        "partial": "/partials/creative-accessibility.ejs"
+        "partial": "/partials/creative/creative-accessibility.ejs"
       },
       {
         "id": "creative-security",
         "tags": ["industry:creative", "problem:security"],
-        "partial": "/partials/creative-security.ejs"
+        "partial": "/partials/creative/creative-security.ejs"
       },
       {
         "id": "creative-new",
         "tags": ["industry:creative", "website:new"],
-        "partial": "/partials/creative-new.ejs"
+        "partial": "/partials/creative/creative-new.ejs"
       },
       {
         "id": "creative-redesign",
         "tags": ["industry:creative", "website:redesign"],
-        "partial": "/partials/creative-redesign.ejs"
+        "partial": "/partials/creative/creative-redesign.ejs"
       },
       {
         "id": "creative-combination",
         "tags": ["industry:creative", "website:combination"],
-        "partial": "/partials/creative-combination.ejs"
+        "partial": "/partials/creative/creative-combination.ejs"
       }
   ]
   
