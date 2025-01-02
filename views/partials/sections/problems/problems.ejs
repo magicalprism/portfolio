@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+      <h2 class="pt-5">Problems</h2>
+      <hr>
+      <!--Problems Icon Layout w/ Wellness Presence-->
+      <% 
+  const industries = ["wellness", "b2b", "b2c", "coaching", "creative"];
+  const sections = ["problems"];
+  const problems = ["presence", "performance", "tools", "conversions", "outdated", "accessibility", "security"];
+%>
+
+<% industries.forEach(industry => { %>
+    <% problems.forEach(problem => { %>
+      <div class="dynamic-content" 
+           data-section="problems" 
+           data-industry="<%= industry %>" 
+           data-problem="<%= problem %>" 
+           style="display: none;">
+        <%- include(`dynamic-content/${industry}/${industry}-${problem}.ejs`) %>
+      </div>
+    <% }); %>
+  <% }); %>
+  
+
+    </div>
+  </section>

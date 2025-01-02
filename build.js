@@ -3,8 +3,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Paths
-const PAGES_DIR = path.join(__dirname, 'views', 'pages', 'partials');
-const OUTPUT_DIR = path.join(__dirname, 'public');
+const PAGES_DIR = path.join(__dirname, 'views', 'pages'); // Path to .ejs files in pages directory
+const OUTPUT_DIR = path.join(__dirname, 'public'); // Output directory for compiled .html files
 
 // Ensure the output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {

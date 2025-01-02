@@ -1,24 +1,58 @@
-<%
-    const pageMeta = {
-        title: "Proposal Form",
-        permalink: "/form.html",
-        lastmod: "2024-12-31",
-        priority: 0.7
-    };
-%>
+
 <script id="pageMeta" type="application/json" style="display: none;">
-    <%= JSON.stringify(pageMeta) %>
+    {&#34;title&#34;:&#34;Proposal Form&#34;,&#34;permalink&#34;:&#34;/form.html&#34;,&#34;lastmod&#34;:&#34;2024-12-31&#34;,&#34;priority&#34;:0.7}
 </script>
-<%- include('../partials/header.ejs', { title: pageMeta.title, pageMeta: pageMeta }) %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/charts.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <title>Proposal Form</title>
+    </head>
+    <body>
+      <nav class="navbar">
+        <div class="container glass menu rounded-pill p-2">
+          <header class="d-flex glass-header">
+            <div>
+                <a href="/" class="d-flex link-body-emphasis text-decoration-none">
+                    <img src="images/logo.png" height="50" alt="Lena Forrey Logo" class="logo">
+                </a>
+              </div>
+            <div>
+              <ul class="nav d-flex mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+                <li><a href="/proposal.html" class="nav-link px-2">Proposal</a></li>
+                <li><a href="/form.html" class="nav-link px-2">Form</a></li>
+                <li><a href="/about.html" class="nav-link px-2">About</a></li>
+                <li><a href="/portfolio.html" class="nav-link px-2">Portfolio</a></li>
+                <li><a href="/contact.html" class="nav-link px-2">Contact</a></li>
+              </ul>
+            </div>
+              <div class="d-flex">
+                
+                <button type="button" class="btn btn-primary rounded-pill px-4 py-3 me-1">Sign-up</button>
+              </div>
+            </header>
+          </div>
+        </nav>
 <!-- Form Page HTML -->
 <div class="container content">
   <h1 hidden>Proposal Form</h1>
 
 
-<div id="form-section">
+<div id="questionnaire">
   <div class="row row-content ">
     <div class="col-12 ">
-      <form id="quiz-form" action="#" method="POST" class="form p-5 glass rounded-1 col-12 ">
+      <form id="quiz-form" action="/generated-proposal" method="POST" class="form p-5 glass rounded-1 col-12 ">
             <!-- Name and Business Information -->
             <div>
               <h2>Tell us about your project</h2>
@@ -27,20 +61,20 @@
               <div class="row">
                 <label class="col-md-2 col-form-label" for="name">Name:</label>
                 <div class="col-md-6">
-                  <input type="text" id="name" name="name" placeholder="Enter your name">
+                  <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
               </div>
               <div class="row">
                 <label class="col-md-2 col-form-label" for="business">Business Name:</label>
                 <div class="col-md-10">
-                  <input type="text" id="business" name="business" placeholder="Enter your business name">
+                  <input type="text" id="business" name="business" placeholder="Enter your business name" required>
                 </div>
               </div>
               <div class="row">
 
                 <label class="col-md-2 col-form-label" for="email">Email:</label>
                 <div class="col-md-10">
-                  <input type="email" id="email" name="email" placeholder="Enter your email">
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
               </div>
 
@@ -348,57 +382,53 @@
           </div>
 
         
-          <!-- Designer developer -->
+          <!-- Designer Experience -->
           <div class="question-section row mb-3" id="section-13">
             <div class="col">
-              <h3>How would you describe your developer with your last designer or developer?</h3>
+              <h3>How would you describe your experience with your last designer or developer?</h3>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="developer" value="newbie" id="developer-newbie">
-                <label class="form-check-label" for="developer-newbie">🤷 Newbie: I’ve never worked with one before.</label>
+                <input class="form-check-input" type="radio" name="experience" value="newbie" id="experience-newbie">
+                <label class="form-check-label" for="experience-newbie">🤷 Newbie: I’ve never worked with one before.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="developer" value="slow" id="developer-slow">
-                <label class="form-check-label" for="developer-slow">🕰️ Slow: They took forever to get anything done.</label>
+                <input class="form-check-input" type="radio" name="experience" value="slow" id="experience-slow">
+                <label class="form-check-label" for="experience-slow">🕰️ Slow: They took forever to get anything done.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="developer" value="ghosted" id="developer-ghosted">
-                <label class="form-check-label" for="developer-ghosted">👻 Ghosted: They disappeared on me.</label>
+                <input class="form-check-input" type="radio" name="experience" value="ghosted" id="experience-ghosted">
+                <label class="form-check-label" for="experience-ghosted">👻 Ghosted: They disappeared on me.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="developer" value="unreliable" id="developer-unreliable">
-                <label class="form-check-label" for="developer-unreliable">❌ Unreliable: They didn’t deliver what they promised.</label>
+                <input class="form-check-input" type="radio" name="experience" value="unreliable" id="experience-unreliable">
+                <label class="form-check-label" for="experience-unreliable">❌ Unreliable: They didn’t deliver what they promised.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="developer" value="okay" id="developer-okay">
-                <label class="form-check-label" for="developer-okay">🛠️ Okay: It was just okay, but I want better communication and results.</label>
+                <input class="form-check-input" type="radio" name="experience" value="okay" id="experience-okay">
+                <label class="form-check-label" for="experience-okay">🛠️ Okay: It was just okay, but I want better communication and results.</label>
               </div>
             </div>
           </div>
 
 
-          <!-- need -->
+          <!-- Excitement -->
           <div class="question-section row mb-3" id="section-14">
             <div class="col">
               <h3>What excites you most about this project?</h3>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="need" value="visuals" id="need-visuals">
-                <label class="form-check-label" for="need-visuals">🎨 Visuals: Seeing my brand’s essence come to life in a bold, visual way.</label>
+                <input class="form-check-input" type="radio" name="excitement" value="visuals" id="excitement-visuals">
+                <label class="form-check-label" for="excitement-visuals">🎨 Visuals: Seeing my brand’s essence come to life in a bold, visual way.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="need" value="results" id="need-results">
-                <label class="form-check-label" for="need-results">🚀 Results: Creating a site that scales my business and delivers results.</label>
+                <input class="form-check-input" type="radio" name="excitement" value="results" id="excitement-results">
+                <label class="form-check-label" for="excitement-results">🚀 Results: Creating a site that scales my business and delivers results.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="need" value="systems" id="need-systems">
-                <label class="form-check-label" for="need-systems">💡 Systems: Streamlining everything into one cohesive platform.</label>
+                <input class="form-check-input" type="radio" name="excitement" value="systems" id="excitement-systems">
+                <label class="form-check-label" for="excitement-systems">💡 Systems: Streamlining everything into one cohesive platform.</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="need" value="alignment" id="need-alignment">
-                <label class="form-check-label" for="need-alignment">🌟 Alignment: Finally having a digital presence that reflects the powerhouse I’ve become.</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="need" value="all" id="all">
-                <label class="form-check-label" for="need-alignment">🌟 Alignment: Finally having a digital presence that reflects the powerhouse I’ve become.</label>
+                <input class="form-check-input" type="radio" name="excitement" value="alignment" id="excitement-alignment">
+                <label class="form-check-label" for="excitement-alignment">🌟 Alignment: Finally having a digital presence that reflects the powerhouse I’ve become.</label>
               </div>
             </div>
           </div>
@@ -407,7 +437,9 @@
           <!-- Navigation Buttons -->
         <div class="navigation row mb-3">
           <div class="col-md-10"> 
-            <button class="btn btn-primary" type="submit">Generate Proposal</button>
+            <button id="prevBtn" class="btn btn-secondary" onclick="changeSection(-1)">Previous</button>
+            <button id="nextBtn" class="btn btn-primary" onclick="changeSection(1)">Next</button>
+            <button id="submitBtn" class="btn btn-success" onclick="submitForm()">Submit</button>
 
           </div>
         </div>
@@ -415,37 +447,189 @@
       </div>
   </div>
 </div>
-<!-- Dynamic Content Section -->
-<div class="dynamic-sections" id="dynamic-section" style="display: none;">
-    <div class="content d-flex flex-column gap-3">
-      <div class="dynamic-content">
-        <%- include('../partials/sections/hero/hero.ejs') %>
-      </div>
-      <div class="dynamic-content">
-        <%- include('../partials/sections/introduction/introduction.ejs') %>
-      </div>
-      <div class="dynamic-content" data-section="problems">
-        <%- include('../partials/sections/problems/problems.ejs') %>
-      </div>
-      <div class="dynamic-content" data-section="features">
-        <%- include('../partials/sections/features/features.ejs') %>
-      </div>
-      <div class="dynamic-content">
-        <%- include('../partials/sections/solutions/solutions.ejs') %>
-      </div>
-      <div class="dynamic-content">
-        <%- include('../partials/sections/objections/objections.ejs') %>
-      </div>
-      <div class="dynamic-content">
-        <%- include('../partials/sections/next-steps/next-steps.ejs') %>
-      </div>
-      <div class="dynamic-content">
-        <%- include('../partials/sections/cta/cta.ejs') %>
-      </div>
-      <script src="js/dynamic-content.js"></script>
+
+<!-- Dynamic Proposal Template -->
+<div class="container" id="dynamic-content">
+  <div class="row row-content dynamic-row">
+  <!-- Industry & Problem-Specific Content -->
+    <div class="col-12">
+    <!-- Presence -->
+      <h3>1. Presence</h3>
+      <p><strong>Your website’s missing its mojo:</strong> Your brand is brilliant, but if no one sees it, does it really exist? Right now, your online presence is a best-kept secret, and your competitors are enjoying the spotlight.
+        
+        <!-- Wellness Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="presence">Your services should radiate calm and healing, but your online presence feels more like a flickering candle than a beacon of light. Clients are searching for balance and wellness, but instead, they’re finding competitors who don’t deliver your level of care. Every missed connection is someone choosing less than they deserve.</span> 
+        <!-- End Wellness Section -->
+
+        <!-- B2B Section -->
+        <span class="dynamic-section" data-industry="b2b" data-problem="presence">Your solutions are game-changing, but your online presence is stuck on the sidelines, letting competitors score all the points. Every day your site is invisible, your competitors are building trust and winning contracts that should be yours.
+          </span> 
+        <!-- End B2B Section -->
+
+        <!-- B2C Section -->
+        <span class="dynamic-section" data-industry="b2c" data-problem="presence">You’ve got amazing products, but your website is the digital version of a store on a deserted street—no signs, no buzz, no customers. Shoppers who should be browsing your storefront are scrolling through someone else’s sales—and every second you’re unseen is another sale lost.</span> 
+        <!-- End B2C Section -->
+
+        <!-- Coaching Section -->
+        <span class="dynamic-section" data-industry="coaching" data-problem="presence">Your clients are looking for guidance, but your online presence is whispering when it should be shouting, ‘I’m here to help!’. Every potential client who can’t find you is settling for a coach who doesn’t deliver like you do. It’s a missed opportunity to transform lives—and your business.</span> 
+        <!-- End Coaching Section -->
+
+        <!-- Creative Section -->
+        <span class="dynamic-section" data-industry="creative" data-problem="presence">Your portfolio is stunning, but your digital presence feels like a blank canvas instead of a masterpiece. If your work isn’t visible online, you’re missing commissions, collaborations, and the recognition you deserve.</span> 
+          <!-- End Creative Section -->
+      </p>
     </div>
   </div>
-</div>
+<!-- Start Conversions Section -->
+    <div class="dynamic-row">
+      <div class="col-12">
+        <h3>2. Conversions</h3>
+        <p><strong>Your website’s more ‘meh’ than magnetic:</strong> You’re hosting the party, but nobody’s staying for the dance. Visitors are window shopping, not buying—and your site isn’t giving them a reason to commit.
+    
+        <!-- Wellness Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="conversions">People are intrigued but not inspired enough to book a session or purchase your products. Every unclicked button is someone walking away from the healing and transformation you provide. That’s not just a missed sale—it’s a missed impact.</span> 
+        <!-- End Wellness Section -->
 
-<script src="js/form-handler.js"></script>
-<% include('../partials/footer.ejs') %>
+        <!-- B2B Section -->
+        <span class="dynamic-section" data-industry="b2b" data-problem="conversions">Your site is getting traffic, but it’s not generating leads. It’s like handing out business cards at a conference without follow-up. Every unfilled contact form or closed tab is a potential client who’s signing with your competitor instead.
+          </span> 
+        <!-- End B2B Section -->
+
+        <!-- B2C Section -->
+        <span class="dynamic-section" data-industry="b2c" data-problem="conversions">Shoppers are browsing but not buying, leaving carts abandoned like forgotten luggage at an airport. Every cart left behind is revenue walking out the door, and your business can’t grow if shoppers don’t convert.</span> 
+        <!-- End B2C Section -->
+
+        <!-- Coaching Section -->
+        <span class="dynamic-section" data-industry="coaching" data-problem="conversions">Your audience is inspired by your content, but your site isn’t guiding them to book sessions or join your programs. Every missed conversion is another life you could have transformed—but didn’t.</span> 
+        <!-- End Coaching Section -->
+
+        <!-- Creative Section -->
+        <span class="dynamic-section" data-industry="creative" data-problem="conversions">People admire your work but aren’t taking the next step to commission it. Your talent deserves action, not just applause—but right now, admiration isn’t paying the bills.</span> 
+          <!-- End Creative Section -->
+      </p>
+    </div>
+  </div>
+    <!-- End Conversions Section -->
+     <!--Begin Outdated Section-->
+     <!-- Start Conversions Section -->
+  <div class="dynamic-row">
+    <div class="col-12"> 
+      <h3>3. Wellness Insights - Outdated</h3>
+      <p><strong>Your Design Feels More ‘1995’ Than ‘Visionary’:</strong> Your site feels more ‘retro’ than ‘relevant.’ It’s telling your audience a story that doesn’t match the visionary business you’ve become.
+        <!-- Start Dynamic Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="outdated">Your website should feel as fresh and revitalizing as your services, but right now, it’s dragging you down. Clients may love your expertise, but if your site doesn’t inspire confidence, they’ll never take the next step.</span> 
+        <!-- End Dynamic Section -->
+      </p>
+    
+    </div>
+    <!-- End Outdated Section -->
+     <!--Begin tools Section-->
+    <div class="col-12">
+      <h3>4. Wellness Insights - Tools</h3>
+      <p><strong>You’re Working Harder, Not Smarter: </strong> Clunky systems are creating more headaches than leads.</p>
+      <p>Appointments, payments, and client emails feel more like a juggling act than a seamless flow.
+        <!-- Start Dynamic Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="tools"><strong>Appointments, payments, and client emails feel more like a juggling act than a seamless flow. Every minute spent troubleshooting tools is a minute stolen from helping your clients achieve balance.</span> 
+        <!-- End Dynamic Section -->
+      </p>
+    </div>
+  </div>
+    <!-- End Tools Section -->
+     <!--Begin Performance Section-->
+     <!-- Start Conversions Section -->
+    <div class="dynamic-row">
+    <div class="col-12">
+      <h3>5. Wellness Insights - Performance</h3>
+      <p><strong>Your website’s snoozing instead of speeding: </strong> Your clients are seeking calm, but your slow site is stressing them out before they even book.
+        <!-- Start Dynamic Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="performance">Appointments, payments, and client emails feel more like a juggling act than a seamless flow. Every delay adds friction, pushing your audience further from the peace you’re offering.</span> 
+        <!-- End Dynamic Section -->
+      </p>
+    </div>
+  </div>
+    <!-- End Performance Section -->
+     <!--Begin Accessibility Section-->
+     <!-- Start Conversions Section -->
+  <div class="dynamic-row">
+    <div class="col-12">
+      <h3>6. Wellness Insights - Accessibility</h3>
+      <p><strong>Your website’s shutting doors instead of opening them: </strong> Your digital space should be welcoming to all, but right now, it’s leaving some of your audience out in the cold. Accessibility isn’t just about doing the right thing—it’s about making sure everyone feels like they belong.
+        <!-- Start Dynamic Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="performance"><strong>Your wellness brand is all about inclusion and connection, but your site’s design and navigation are creating barriers for those who need it most. Every visitor who struggles to interact with your site is a missed chance to provide healing and balance. Instead of being a beacon of peace, your site is inadvertently causing frustration.</span> 
+        <!-- End Dynamic Section -->
+      </p>
+    </div>
+    <!-- End Assessibility Section -->
+     <!--Begin Security Section-->
+    <div class="col-12">
+      <h3>7. Wellness Insights - Security</h3>
+      <p><strong>Your website’s a house of cards instead of a fortress:</strong> Your site should feel like a safe haven, but right now, it’s more like a welcome mat for cyber threats. Security isn’t just a feature—it’s the foundation of trust.
+        <!-- Start Dynamic Section -->
+        <span class="dynamic-section" data-industry="wellness" data-problem="security"><strong>Your clients are trusting you with sensitive information, but your site’s security is making them second-guess that trust. Every vulnerability in your site’s defenses is an open door for breaches that could harm your clients and your reputation.</span> 
+        <!-- End Dynamic Section -->
+      </p>
+    </div>
+  </div>
+    <!-- End Security Section -->
+
+
+
+
+    
+
+
+
+
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function updateDynamicContent() {
+    // Get the selected industry and problems
+    const industryInput = document.querySelector('input[name="industry"]:checked');
+    const problemInputs = document.querySelectorAll('input[name="problem"]:checked');
+
+    const industry = industryInput ? industryInput.value : null;
+    const problems = Array.from(problemInputs).map(input => input.value);
+
+    // Hide all dynamic sections by default
+    const allDynamicSections = document.querySelectorAll(".dynamic-section");
+    const allDynamicRows = document.querySelectorAll(".dynamic-row");
+
+    allDynamicRows.forEach(row => {
+      const dynamicSections = row.querySelectorAll(".dynamic-section");
+      let showRow = false;
+
+      dynamicSections.forEach(section => {
+        const sectionIndustry = section.getAttribute("data-industry");
+        const sectionProblem = section.getAttribute("data-problem");
+
+        // Check if the section should be visible
+        if (
+          (!sectionIndustry || sectionIndustry === industry) &&
+          (!sectionProblem || problems.includes(sectionProblem))
+        ) {
+          section.style.display = "inline";
+          showRow = true;
+        } else {
+          section.style.display = "none";
+        }
+      });
+
+      // Hide or show the entire row
+      row.style.display = showRow ? "block" : "none";
+    });
+  }
+
+  // Attach event listeners
+  const industryInputs = document.querySelectorAll('input[name="industry"]');
+  const problemInputs = document.querySelectorAll('input[name="problem"]');
+
+  industryInputs.forEach(input => input.addEventListener("change", updateDynamicContent));
+  problemInputs.forEach(input => input.addEventListener("change", updateDynamicContent));
+
+  // Initial run to set visibility
+  updateDynamicContent();
+});
+
+</script>

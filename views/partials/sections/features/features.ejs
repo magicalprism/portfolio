@@ -1,0 +1,57 @@
+<section>
+    <div class="container">
+            <h2 class="pt-5">Features</h2>
+            <hr>
+            <p class="py-3">
+                "We’re here to craft a digital masterpiece that doesn’t just look good—it works beautifully, feels uniquely you, and leaves your visitors saying, ‘Wow, I need this in my life.’"
+            </p>
+            <div>
+                <p>
+                    Here’s what we’re bringing to the canvas
+                </p>
+                <h3>
+                    Features to Make Them Stay (and Pay):
+                </h3>
+            </div>
+        </div>
+        <!-- Features Section -->
+        <div class="row flex-wrap g-5 py-5">
+            <!-- Feature: E-commerce -->
+            <div class="dynamic-content col-6" data-section="feature" data-feature="ecommerce" style="display: none;">
+                <%- include('ecommerce.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="membership" style="display: none;">
+            <!-- Feature: E-membership -->
+                <%- include('membership.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="learning" style="display: none;">
+                <!-- Feature: learning -->
+                <%- include('learning.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="blog" style="display: none;">
+                <!-- Feature: blog -->
+                <%- include('blog.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="portfolio" style="display: none;">
+                <!-- Feature: portfolio -->
+                <%- include('portfolio.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="landing" style="display: none;">
+                <!-- Feature: landing -->
+                <%- include('landing.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="affiliate" style="display: none;">
+                <!-- Feature: affiliate -->
+                <%- include('affiliate.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="dashboard" style="display: none;">
+                <!-- Feature: dashboard -->
+                <%- include('dashboard.ejs') %>
+            </div>
+            <div class="dynamic-content col-6" data-section="feature" data-feature="support" style="display: none;">
+                <!-- Feature: Support -->
+                <%- include('support.ejs') %>
+            </div>
+        </div>
+    </div>
+</section>
