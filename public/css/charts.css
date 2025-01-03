@@ -1,18 +1,18 @@
 :root {
-    --doughnut-color-1: #1013d3;
-    --doughnut-color-2: #ebebeb;
+  --doughnut-color-1: #1013d3;
+  --doughnut-color-2: #ebebeb;
 }
 canvas {
-    margin: 20px auto;
-    display: block;
-    max-width: 200px;
-    max-height: 200px;
+  margin: 20px auto;
+  display: block;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
 }

@@ -1,0 +1,23 @@
+<%
+    const pageMeta = {
+        title: "Proposal",
+        permalink: "/proposal.html",
+        lastmod: "2024-12-31",
+        priority: 0.7
+    };
+%>
+<script id="pageMeta" type="application/json" style="display: none;">
+    <%= JSON.stringify(pageMeta) %>
+</script>
+<%- include('../partials/header.ejs', { title: pageMeta.title, pageMeta: pageMeta }) %>
+
+<div class="content d-flex flex-column gap-3">
+    <%- include('../partials/sections/hero.ejs') %>
+    <%- include('../partials/sections/introduction.ejs') %>
+    <%- include('../partials/sections/problems.ejs') %>
+    <%- include('../partials/sections/features.ejs') %>
+    <%- include('../partials/sections/solutions.ejs') %>
+    <%- include('../partials/sections/objections.ejs') %>
+</div>
+<script src="js/graphs.js"></script>
+<%- include('../partials/footer.ejs') %>

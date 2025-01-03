@@ -1,23 +1,454 @@
 <%
     const pageMeta = {
-        title: "Proposal",
-        permalink: "/proposal.html",
+        title: "Proposal Generator",
+        permalink: "/generate-proposal.html",
         lastmod: "2024-12-31",
         priority: 0.7
     };
 %>
-<script id="pageMeta" type="application/json" style="display: none;">
+<script id="pageMeta" type="application/json" style="display: none;"> 
     <%= JSON.stringify(pageMeta) %>
 </script>
-<%- include('../partials/header.ejs', { title: pageMeta.title, pageMeta: pageMeta }) %>
+<%- include('../partials/head.ejs', { title: pageMeta.title, pageMeta: pageMeta }) %>
+<!-- Form Page HTML -->
+<div class="content">
+  <h1 hidden>Proposal Form</h1>
 
-<div class="content d-flex flex-column gap-3">
-    <%- include('../partials/sections/hero.ejs') %>
-    <%- include('../partials/sections/introduction.ejs') %>
-    <%- include('../partials/sections/problems.ejs') %>
-    <%- include('../partials/sections/features.ejs') %>
-    <%- include('../partials/sections/solutions.ejs') %>
-    <%- include('../partials/sections/objections.ejs') %>
+
+<div id="form-section" class="container">
+  <div class="row row-content">
+    <div class="col-12 mt-5">
+      <form id="quiz-form" action="#" method="POST" class="form container p-5 glass rounded-1 col-12" mime="multipart/form-data">
+            <!-- Name and Business Information -->
+            <div>
+              <h2>Tell us about your project</h2>
+            </div>
+            <div class="question-section visible row mb-2" id="section-1">
+              <div class="row">
+                <label class="col-md-2 col-form-label" for="name">Name:</label>
+                <div class="col-md-6">
+                  <input type="text" id="name" name="name" placeholder="Enter your name">
+                </div>
+              </div>
+              <div class="row">
+                <label class="col-md-2 col-form-label" for="business">Business Name:</label>
+                <div class="col-md-10">
+                  <input type="text" id="business" name="business" placeholder="Enter your business name">
+                </div>
+              </div>
+              <div class="row">
+
+                <label class="col-md-2 col-form-label" for="email">Email:</label>
+                <div class="col-md-10">
+                  <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+              </div>
+
+            </div>
+        
+            <!-- Direction Selection add hidden to for multipage-->
+            <div class="question-section row mb-3" id="section-2">
+              <div class="col">
+                <h3>What direction should we go?</h3>
+                <div>
+                  <input class="form-check-input" type="radio" name="direction" value="email" id="emailyou">
+                  <label class="form-check-label" for="emailyou">✉️ I just want to email you.</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="direction" value="website" id="website">
+                  <label class="form-check-label" for="website">🌟 I need a website or app—let’s get started.</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="direction" value="freebies" id="freebies">
+                  <label class="form-check-label" for="freebies">🎁 I heard you have some cool freebies—I’m here for those.</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="direction" value="browse" id="browse">
+                  <label class="form-check-label" for="browse">👀 I want to browse your work first.</label>
+                </div>
+              </div>
+            </div>
+
+        
+            <!-- Industry Selection -->
+            <div class="question-section row mb-3" id="section-3">
+              <div class="col">
+                <h3>What industry(s) will this project be serving?</h3>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" value="wellness" id="wellness">
+                  <label class="form-check-label" for="wellness">🌿 Wellness</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" value="b2b" id="b2b">
+                  <label class="form-check-label" for="b2b">📈 B2B</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" value="b2c" id="b2c">
+                  <label class="form-check-label" for="b2c">🛍️ B2C</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" value="coaching" id="coaching">
+                  <label class="form-check-label" for="coaching">💼 Coaching</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="industry" value="creative" id="creative">
+                  <label class="form-check-label" for="creative">🎨 Creative</label>
+                </div>
+              </div>
+            </div>
+
+        
+            <!-- Timeline Selection -->
+            <div class="question-section row mb-3" id="section-4">
+              <div class="col">
+                <h3>When do you need this by?</h3>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="timeline" value="asap" id="asap">
+                  <label class="form-check-label" for="asap">⚡ ASAP</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="timeline" value="6months" id="6months">
+                  <label class="form-check-label" for="6months">📆 Up to 6 months</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="timeline" value="12months" id="12months">
+                  <label class="form-check-label" for="12months">🎯 Up to 12 months</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role Selection -->
+            <div class="question-section row mb-3" id="section-5">
+              <div class="col">
+                <h3>What word best describes the role of the lead person behind the brand?</h3>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="visionary" id="visionary">
+                  <label class="form-check-label" for="visionary">Visionary</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="founder" id="founder">
+                  <label class="form-check-label" for="founder">Founder</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="creator" id="creator">
+                  <label class="form-check-label" for="creator">Creator</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="writer" id="writer">
+                  <label class="form-check-label" for="writer">Writer</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="coach" id="coach">
+                  <label class="form-check-label" for="coach">Coach</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="strategist" id="strategist">
+                  <label class="form-check-label" for="strategist">Strategist</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="role" value="practitioner" id="practitioner">
+                  <label class="form-check-label" for="practitioner">Practitioner</label>
+                </div>
+              </div>
+            </div>
+
+        
+            <!-- Problem Selection -->
+            <div class="question-section row mb-3" id="section-6">
+              <div class="col">
+                <h3>What’s the biggest challenge your business is facing online right now?</h3>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="presence" id="presence">
+                  <label class="form-check-label" for="presence">🚪 Presence</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="conversions" id="conversions">
+                  <label class="form-check-label" for="conversions">🤷 Conversions</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="tools" id="tools">
+                  <label class="form-check-label" for="tools">🔗 Tools</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="outdated" id="outdated">
+                  <label class="form-check-label" for="outdated">🕰️ Outdated</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="performance" id="performance">
+                  <label class="form-check-label" for="performance">⚡ Performance</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="accessibility" id="accessibility">
+                  <label class="form-check-label" for="accessibility">🌍 Accessibility</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="problem" value="security" id="security">
+                  <label class="form-check-label" for="security">🔐 Security</label>
+                </div>
+              </div>
+            </div>
+
+        
+            <!-- Website Type -->
+            <div class="question-section row mb-3" id="section-7">
+              <div class="col">
+                <h3>Is this your first website, or are we redesigning an existing one?</h3>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="website" value="first" id="first">
+                  <label class="form-check-label" for="first">✨ First website—this is a brand-new adventure for my business.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="website" value="redesign" id="redesign">
+                  <label class="form-check-label" for="redesign">🌟 Redesign—I need to elevate or completely reimagine my current site.</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="website" value="combination" id="combination">
+                  <label class="form-check-label" for="combination">🔗 Combination—We’d like some new custom pages but to also keep the designs of some existing pages.</label>
+                </div>
+              </div>
+            </div>
+
+        
+        <!-- Primary Goal Selection -->
+        <div class="question-section row mb-3" id="section-8">
+          <div class="col">
+            <h3>What’s your primary goal for this project?</h3>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="goal" value="launch" id="launch">
+              <label class="form-check-label" for="launch">🚀 Launch: Launch something new (a product, service, or brand).</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="goal" value="scale" id="scale">
+              <label class="form-check-label" for="scale">🎯 Scale: Scale my business with a site that converts effortlessly.</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="goal" value="elevate" id="elevate">
+              <label class="form-check-label" for="elevate">🌟 Elevate: Elevate my brand to reflect my level of success.</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="goal" value="streamline" id="streamline">
+              <label class="form-check-label" for="streamline">🔗 Streamline: Streamline my business with tools and systems that work together.</label>
+            </div>
+          </div>
+        </div>
+
+        
+          <!-- Custom Pages -->
+          <div class="question-section row mb-3" id="section-9">
+            <div class="col">
+              <h3>How many custom pages will we need to make this vision a reality?</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pages" value="5-10" id="pages-5-10">
+                <label class="form-check-label" for="pages-5-10">🎨 5–10 pages</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pages" value="10-20" id="pages-10-20">
+                <label class="form-check-label" for="pages-10-20">🖼️ 10–20 pages</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pages" value="20+" id="pages-20+">
+                <label class="form-check-label" for="pages-20+">📖 20+ pages</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pages" value="not-sure" id="pages-not-sure">
+                <label class="form-check-label" for="pages-not-sure">🌟 I’m not sure yet—let’s figure it out together.</label>
+              </div>
+            </div>
+          </div>
+
+        
+          <!-- Features Selection -->
+          <div class="question-section row mb-3" id="section-10">
+            <div class="col">
+              <h3>What features or functionality will take your site to the next level?</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="ecommerce" id="ecommerce">
+                <label class="form-check-label" for="ecommerce">🛒 E-commerce (product listings, cart, checkout)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="membership" id="membership">
+                <label class="form-check-label" for="membership">💼 Membership (exclusive content, subscriptions, secure dashboards)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="learning" id="learning">
+                <label class="form-check-label" for="learning">🧑‍🏫 Learning (online courses, progress tracking, certifications)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="blog" id="blog">
+                <label class="form-check-label" for="blog">📚 Blog (SEO-driven articles, news, or resources)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="portfolio" id="portfolio">
+                <label class="form-check-label" for="portfolio">🗂️ Portfolio (showcasing work or projects)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="landing" id="landing">
+                <label class="form-check-label" for="landing">🎯 Landing Pages (campaigns, lead generation)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="affiliate" id="affiliate">
+                <label class="form-check-label" for="affiliate">🎁 Affiliate (reward programs for customers)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="dashboard" id="dashboard">
+                <label class="form-check-label" for="dashboard">📊 Dashboards (analytics or business data)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="feature" value="support" id="support">
+                <label class="form-check-label" for="support">🤝 Support Center (FAQs, chatbot, or helpdesk)</label>
+              </div>
+            </div>
+          </div>
+
+        
+          <!-- Budget -->
+          <div class="question-section row mb-3" id="section-11">
+            <div class="col">
+              <h3>What’s your budget for this project?</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="budget" value="5-10k" id="budget-5-10k">
+                <label class="form-check-label" for="budget-5-10k">💰 $5k–$10k: A polished site with essential features.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="budget" value="10-20k" id="budget-10-20k">
+                <label class="form-check-label" for="budget-10-20k">📈 $10k–$20k: A robust site with advanced functionality (e.g., e-commerce or membership).</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="budget" value="20k+" id="budget-20k+">
+                <label class="form-check-label" for="budget-20k+">🚀 $20k+: A fully custom digital platform or app designed to scale.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="budget" value="discuss" id="budget-discuss">
+                <label class="form-check-label" for="budget-discuss">🌟 Let’s discuss—I’m open to investing in the right solution.</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aesthetic Selection -->
+          <div class="question-section row mb-3" id="section-12">
+            <div class="col">
+              <h3>How would you describe your ideal aesthetic?</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="aesthetic" value="bright" id="aesthetic-bright">
+                <label class="form-check-label" for="aesthetic-bright">🌈 Bright (vibrant, dynamic, and full of energy)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="aesthetic" value="minimal" id="aesthetic-minimal">
+                <label class="form-check-label" for="aesthetic-minimal">🤍 Minimal (sleek, polished, and timeless)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="aesthetic" value="natural" id="aesthetic-natural">
+                <label class="form-check-label" for="aesthetic-natural">🌿 Natural (warm, grounded, and soulful)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="aesthetic" value="futuristic" id="aesthetic-futuristic">
+                <label class="form-check-label" for="aesthetic-futuristic">🔮 Futuristic (edgy, innovative, and forward-thinking)</label>
+              </div>
+            </div>
+          </div>
+
+        
+          <!-- Designer developer -->
+          <div class="question-section row mb-3" id="section-13">
+            <div class="col">
+              <h3>How would you describe your developer with your last designer or developer?</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="objection" value="newbie" id="newbie">
+                <label class="form-check-label" for="newbie">🤷 Newbie: I’ve never worked with one before.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="objection" value="slow" id="objection-slow">
+                <label class="form-check-label" for="slow">🕰️ Slow: They took forever to get anything done.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="objection" value="ghosted" id="ghosted">
+                <label class="form-check-label" for="ghosted">👻 Ghosted: They disappeared on me.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="objection" value="unreliable" id="unreliable">
+                <label class="form-check-label" for="unreliable">❌ Unreliable: They didn’t deliver what they promised.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="objection" value="okay" id="okay">
+                <label class="form-check-label" for="okay">🛠️ Okay: It was just okay, but I want better communication and results.</label>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- need -->
+          <div class="question-section row mb-3" id="section-14">
+            <div class="col">
+              <h3>What excites you most about this project?</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="need" value="visuals" id="need-visuals">
+                <label class="form-check-label" for="need-visuals">🎨 Visuals: Seeing my brand’s essence come to life in a bold, visual way.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="need" value="results" id="need-results">
+                <label class="form-check-label" for="need-results">🚀 Results: Creating a site that scales my business and delivers results.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="need" value="systems" id="need-systems">
+                <label class="form-check-label" for="need-systems">💡 Systems: Streamlining everything into one cohesive platform.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="need" value="alignment" id="need-alignment">
+                <label class="form-check-label" for="need-alignment">🌟 Alignment: Finally having a digital presence that reflects the powerhouse I’ve become.</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="need" value="all" id="all">
+                <label class="form-check-label" for="need-alignment">🌟 Alignment: Finally having a digital presence that reflects the powerhouse I’ve become.</label>
+              </div>
+            </div>
+          </div>
+
+        
+          <!-- Navigation Buttons -->
+        <div class="navigation row mb-3">
+          <div class="col-md-10"> 
+            <button class="btn btn-primary" type="submit">Generate Proposal</button>
+
+          </div>
+        </div>
+        </form>
+      </div>
+  </div>
 </div>
-<script src="js/graphs.js"></script>
-<%- include('../partials/footer.ejs') %>
+<!-- Dynamic Content Section -->
+<div class="dynamic-sections" id="dynamic-section" style="display: none;">
+    <div class="d-flex flex-column gap-3">
+      <div data-section="hero introduction">
+        <%- include('../partials/proposal-header.ejs') %>
+      </div>
+        <%- include('../partials/sections/introduction/introduction.ejs') %>
+      <div data-section="problems">
+        <%- include('../partials/sections/problems/problems.ejs') %>
+      </div>
+      <div data-section="features">
+        <%- include('../partials/sections/features/features.ejs') %>
+      </div>
+      <div data-section="solutions">
+        <%- include('../partials/sections/solutions/solutions.ejs') %>
+      </div>
+      <div data-section="objections">
+        <%- include('../partials/sections/objections/objections.ejs') %>
+      </div>
+      <div data-section="next-steps">
+        <%- include('../partials/sections/next-steps/next-steps.ejs') %>
+      </div>
+      <div data-section="cta">
+        <%- include('../partials/sections/cta/cta.ejs') %>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/fetch-content.js"></script>
+<script src="js/restore-filters.js"></script>
+<script src="js/apply-filters.js"></script>
+<script src="js/event-listeners.js"></script>
+<script src="js/master-loader.js"></script>
+<script src="js/current-date.js"></script>
+<script src="js/form-handler.js"></script>
+<% include('../partials/footer.ejs') %>

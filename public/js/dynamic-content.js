@@ -1,48 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
-  function updateDynamicContent() {
-    // Get the selected industry, problems, and features
-    const industryInput = document.querySelector('input[name="industry"]:checked');
-    const problemInputs = document.querySelectorAll('input[name="problem"]:checked');
-    const featureInputs = document.querySelectorAll('input[name="feature"]:checked');
+async function fetchContent() {
+  try {
+    const response = await fetch("/content.json");
+    return await response.json();
+  } catch (error) {
+    return {};
+  }
+}
 
-    const selectedIndustry = industryInput ? industryInput.value : null;
-    const selectedProblems = Array.from(problemInputs).map(input => input.value);
-    const selectedFeatures = Array.from(featureInputs).map(input => input.value);
+async function preloadContent(contentData) {
+  const sections = {
+    problems: {
+      containerId: "dynamic-problems",
+      templateId: "loop-i-r-arrow-chart-4",
+      hasCharts: true,
+    },
+    features: {
+      containerId: "dynamic-features",
+      templateId: "loop-i-box-blue",
+    },
+    solutions: {
+      containerId: "dynamic-solutions",
+      templateId: "loop-i-box-blue",
+    },
+    objections: {
+      containerId: "dynamic-objections",
+      templateId: "loop-i-box-blue",
+    },
+  };
 
-    console.log("Selected Industry:", selectedIndustry);
-    console.log("Selected Problems:", selectedProblems);
-    console.log("Selected Features:", selectedFeatures);
+  for (const [key, config] of Object.entries(sections)) {
+    const container = document.getElementById(config.containerId);
+    const template = document.getElementById(config.templateId);
 
-    // Get all dynamic content sections
-    const dynamicSections = document.querySelectorAll(".dynamic-content");
+    if (!container || !template) continue;
 
-    // Iterate over each dynamic content section
-    dynamicSections.forEach(section => {
-      const sectionIndustry = section.getAttribute("data-industry");
-      const sectionProblem = section.getAttribute("data-problem");
-      const sectionFeature = section.getAttribute("data-feature");
+    container.innerHTML = ""; // Clear previous content
 
-      // Determine if the section should be visible
-      const showSection =
-        (!sectionIndustry || sectionIndustry === selectedIndustry) &&
-        (!sectionProblem || selectedProblems.includes(sectionProblem)) &&
-        (!sectionFeature || selectedFeatures.includes(sectionFeature));
+    if (!contentData[key]) continue;
 
-      // Show or hide the section
-      section.style.display = showSection ? "block" : "none";
-      console.log(`Section ${section.getAttribute("data-section")} visibility: ${showSection}`);
+    Object.entries(contentData[key]).forEach(([industry, items]) => {
+      Object.entries(items).forEach(([itemKey, data]) => {
+        if (!data.title || !data.content) return;
+
+        // **Clone the correct template**
+        let sectionElement = template.content.cloneNode(true);
+        let dynamicDiv =
+          sectionElement.querySelector(".dynamic-content") ||
+          sectionElement.firstElementChild;
+
+        if (!dynamicDiv) return;
+
+        // **Set filtering attributes**
+        dynamicDiv.setAttribute("data-industry", industry);
+        dynamicDiv.setAttribute("data-key", itemKey);
+
+        // **Populate content**
+        let titleElement = dynamicDiv.querySelector(".section-title");
+        let contentElement = dynamicDiv.querySelector(".section-content");
+
+        if (titleElement) titleElement.textContent = data.title;
+        if (contentElement)
+          contentElement.innerHTML = Array.isArray(data.content)
+            ? data.content.join(" ")
+            : data.content;
+
+        // **If the section has charts, populate them**
+        if (config.hasCharts && data.charts) {
+          let chartContainers = dynamicDiv.querySelectorAll(".col-md-3 canvas");
+
+          data.charts.forEach((chartData, index) => {
+            if (chartContainers[index]) {
+              chartContainers[index].setAttribute("id", chartData.id);
+              let chartTitle = chartContainers[index].nextElementSibling;
+              if (chartTitle) chartTitle.textContent = chartData.label;
+              initializeChart(chartData);
+            }
+          });
+        }
+
+        // **Append to container**
+        container.appendChild(sectionElement);
+      });
     });
   }
+}
 
-  // Attach event listeners to form inputs
-  const industryInputs = document.querySelectorAll('input[name="industry"]');
-  const problemInputs = document.querySelectorAll('input[name="problem"]');
-  const featureInputs = document.querySelectorAll('input[name="feature"]');
-
-  industryInputs.forEach(input => input.addEventListener("change", updateDynamicContent));
-  problemInputs.forEach(input => input.addEventListener("change", updateDynamicContent));
-  featureInputs.forEach(input => input.addEventListener("change", updateDynamicContent));
-
-  // Initial run to set visibility
-  updateDynamicContent();
-});
+// **Initialize Chart.js for dynamic charts**
+function initializeChart(chartConfig) {
+  const ctx = document.getElementById(chartConfig.id);
+  if (ctx) {
+    new Chart(ctx, {
+      type: chartConfig.type || "bar",
+      data: chartConfig.data,
+      options: chartConfig.options || {},
+    });
+  }
+}

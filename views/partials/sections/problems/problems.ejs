@@ -1,26 +1,43 @@
 <section>
-    <div class="container">
-      <h2 class="pt-5">Problems</h2>
-      <hr>
-      <!--Problems Icon Layout w/ Wellness Presence-->
-      <% 
-  const industries = ["wellness", "b2b", "b2c", "coaching", "creative"];
-  const sections = ["problems"];
-  const problems = ["presence", "performance", "tools", "conversions", "outdated", "accessibility", "security"];
-%>
-
-<% industries.forEach(industry => { %>
-    <% problems.forEach(problem => { %>
-      <div class="dynamic-content" 
-           data-section="problems" 
-           data-industry="<%= industry %>" 
-           data-problem="<%= problem %>" 
-           style="display: none;">
-        <%- include(`dynamic-content/${industry}/${industry}-${problem}.ejs`) %>
-      </div>
-    <% }); %>
-  <% }); %>
-  
-
-    </div>
-  </section>
+  <div class="container">
+    <h2 class="pt-5">Problems</h2>
+    <hr>
+    <!-- This will be dynamically populated using JavaScript -->
+      <template id="loop-i-r-arrow-chart-4">
+        <div class="col-12 d-flex flex-row">
+            <div class="proposal-problems card-body fas-1">
+                <svg class="me-5 " xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 1024 1024" {...props}>
+                    <path fill="currentColor" d="M754.752 480H160a32 32 0 1 0 0 64h594.752L521.344 777.344a32 32 0 0 0 45.312 45.312l288-288a32 32 0 0 0 0-45.312l-288-288a32 32 0 1 0-45.312 45.312L754.752 480z"></path>
+                </svg>
+            </div>
+            <div class="card-body">
+                <h3 class="section-title fs-4 pt-1"></h3>              
+                <p class="section-content"></p>
+                <div class="row row-chart-4">
+                    <!-- Chart 1 -->
+                    <div class="col-md-3">
+                        <canvas id="chart1Name"></canvas>
+                        <p class="chart-title"></p>
+                    </div>
+                    <!-- Chart 2 -->
+                    <div class="col-md-3">
+                        <canvas id="chart1Name"></canvas>
+                        <p class="chart-title"></p>
+                    </div>
+                    <!-- Chart 3 -->
+                    <div class="col-md-3">
+                        <canvas id="chart1Name"></canvas>
+                        <p class="chart-title"></p>
+                    </div>
+                    <!-- Chart 4 -->
+                    <div class="col-md-3">
+                        <canvas id="chart1Name"></canvas>
+                        <p class="chart-title"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </template>
+    <div id="dynamic-problems" class="dynamic-content-container d-flex flex-row flex-wrap g-1"></div>
+  </div>
+</section>

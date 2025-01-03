@@ -1,0 +1,202 @@
+{
+  "hero": {
+    "wellness": {
+      "title": "",
+      "content": "Websites and apps for results-driven visionaries who know magic isn’t just for fairy tales."
+    }
+  },
+  "introduction": {
+    "wellness": {
+      "title": "Cost Concerns",
+      "content": "We ensure value for every dollar you spend."
+    }
+  },
+  "problems": {
+    "wellness": {
+      "presence": {
+        "title": "Your Digital Presence Feels... meh",
+        "content": [
+          "Your services are life-changing—transformative even. But let’s not sugarcoat it, the website side of your business is kind of a mess. Even worse... it often feels like it's actively working against you. Here’s the cold, hard truth: in today’s world, your digital presence is your first impression."
+        ],
+        "charts": [
+          {
+            "id": "firstImpressionsChart",
+            "label": "75% of users judge credibility by design",
+            "type": "bar",
+            "data": {
+              "labels": ["Strong", "Average", "Weak"],
+              "datasets": [
+                {
+                  "label": "Design Impact",
+                  "data": [75, 20, 5],
+                  "backgroundColor": ["#ff6384", "#36a2eb", "#ffce56"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "loadTimeChart",
+            "label": "7% conversion loss for every 1s delay",
+            "type": "bar",
+            "data": {
+              "labels": ["Strong", "Average", "Weak"],
+              "datasets": [
+                {
+                  "label": "Design Impact",
+                  "data": [75, 20, 5],
+                  "backgroundColor": ["#ff6384", "#36a2eb", "#ffce56"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "unclearMessagingChart",
+            "label": "88% of visitors won't return after bad UX",
+            "type": "bar",
+            "data": {
+              "labels": ["Strong", "Average", "Weak"],
+              "datasets": [
+                {
+                  "label": "Design Impact",
+                  "data": [75, 20, 5],
+                  "backgroundColor": ["#ff6384", "#36a2eb", "#ffce56"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "bounceRateChart",
+            "label": "Bounce rates climb to 38% at 5s load time",
+            "type": "bar",
+            "data": {
+              "labels": ["Strong", "Average", "Weak"],
+              "datasets": [
+                {
+                  "label": "Design Impact",
+                  "data": [75, 20, 5],
+                  "backgroundColor": ["#ff6384", "#36a2eb", "#ffce56"]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "performance": {
+        "title": "Your website’s snoozing instead of speeding",
+        "content": [
+          "Your clients are seeking calm, but your slow site is stressing them out before they even book.",
+          "Appointments, payments, and client emails feel more like a juggling act than a seamless flow.",
+          "Every delay adds friction, pushing your audience further from the peace you’re offering."
+        ]
+      },
+      "tools": {
+        "title": "You’re Working Harder, Not Smarter",
+        "content": [
+          "Clunky systems are creating more headaches than leads.",
+          "Appointments, payments, and client emails feel more like a juggling act than a seamless flow.",
+          "Every minute spent troubleshooting tools is a minute stolen from helping your clients achieve balance."
+        ]
+      },
+      "conversions": {
+        "title": "Your website’s more ‘meh’ than magnetic",
+        "content": [
+          "You’re hosting the party, but nobody’s staying for the dance.",
+          "Visitors are window shopping, not buying—and your site isn’t giving them a reason to commit.",
+          "Every unclicked button is someone walking away from the healing and transformation you provide."
+        ]
+      },
+      "outdated": {
+        "title": "Your Design Feels More ‘1995’ Than ‘Visionary’",
+        "content": [
+          "Your site feels more ‘retro’ than ‘relevant.’ It’s telling your audience a story that doesn’t match the visionary business you’ve become.",
+          "Your website should feel as fresh and revitalizing as your services, but right now, it’s dragging you down.",
+          "Clients may love your expertise, but if your site doesn’t inspire confidence, they’ll never take the next step."
+        ]
+      },
+      "accessibility": {
+        "title": "Your website’s shutting doors instead of opening them",
+        "content": [
+          "Your digital space should be welcoming to all, but right now, it’s leaving some of your audience out in the cold.",
+          "Accessibility isn’t just about doing the right thing—it’s about making sure everyone feels like they belong.",
+          "Your wellness brand is all about inclusion and connection, but your site’s design and navigation are creating barriers for those who need it most."
+        ]
+      },
+      "security": {
+        "title": "Your website’s a house of cards instead of a fortress",
+        "content": [
+          "Your site should feel like a safe haven, but right now, it’s more like a welcome mat for cyber threats.",
+          "Security isn’t just a feature—it’s the foundation of trust.",
+          "Your clients are trusting you with sensitive information, but your site’s security is making them second-guess that trust."
+        ]
+      }
+    },
+    "b2b": {
+      "presence": { "title": "", "content": "" },
+      "performance": { "title": "", "content": "" },
+      "tools": { "title": "", "content": "" },
+      "conversions": { "title": "", "content": "" },
+      "outdated": { "title": "", "content": "" },
+      "accessibility": { "title": "", "content": "" },
+      "security": { "title": "", "content": "" }
+    },
+    "b2c": {
+      "presence": { "title": "", "content": "" },
+      "performance": { "title": "", "content": "" },
+      "tools": { "title": "", "content": "" },
+      "conversions": { "title": "", "content": "" },
+      "outdated": { "title": "", "content": "" },
+      "accessibility": { "title": "", "content": "" },
+      "security": { "title": "", "content": "" }
+    },
+    "coaching": {
+      "presence": { "title": "", "content": "" },
+      "performance": { "title": "", "content": "" },
+      "tools": { "title": "", "content": "" },
+      "conversions": { "title": "", "content": "" },
+      "outdated": { "title": "", "content": "" },
+      "accessibility": { "title": "", "content": "" },
+      "security": { "title": "", "content": "" }
+    },
+    "creative": {
+      "presence": { "title": "", "content": "" },
+      "performance": { "title": "", "content": "" },
+      "tools": { "title": "", "content": "" },
+      "conversions": { "title": "", "content": "" },
+      "outdated": { "title": "", "content": "" },
+      "accessibility": { "title": "", "content": "" },
+      "security": { "title": "", "content": "" }
+    }
+  },
+  "features": {
+    "wellness": {
+      "dashboard": {
+        "title": "Dashboards",
+        "content": "A command center for your data that’s as beautiful as it is functional.",
+        "svg": ""
+      },
+      "membership": {
+        "title": "Analytics",
+        "content": "Actionable insights to drive better decisions.",
+        "svg": "<path fill='currentColor' d='...' />"
+      }
+    }
+  },
+  "objections": {
+    "wellness": {
+      "slow": {
+        "title": "Cost Concerns",
+        "content": "We ensure value for every dollar you spend.",
+        "svg": "<path fill='currentColor' d='...' />"
+      }
+    }
+  },
+  "solutions": {
+    "wellness": {
+      "presence": {
+        "title": "Cost Concerns",
+        "content": "We ensure value for every dollar you spend.",
+        "svg": "<path fill='currentColor' d='...' />"
+      }
+    }
+  }
+}

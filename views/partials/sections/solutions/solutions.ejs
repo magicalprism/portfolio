@@ -1,77 +1,20 @@
-<section class="d-flex flex-col gap-3">
-    <div class="container">
-        <h2 class="pt-5">Solution</h2>
-        <hr>
-        <p class="py-3">
-            "We’re here to craft a digital masterpiece that doesn’t just look good—it works beautifully, feels uniquely you, and leaves your visitors saying, ‘Wow, I need this in my life.’"</p>
-    <div>
-        <p>Here’s what we’re bringing to the canvas</p>
+<section>
+  <div class="container">
+    <h2 class="pt-5">Solutions</h2>
+    <hr>
+    <!-- This will be dynamically populated using JavaScript -->
+    <template id="loop-i-box-blue">
+      <div class="col-6">
+      <div class="dynamic-content d-flex flex-col card shadow-sm p-5 h-100">
+        <div class="card-body section-icon">
+        </div>
+        <div class="card-body">
+            <h3 class="section-title"></h3>
+            <p class="section-content"></p>
+        </div>
+      </div>
     </div>
-    <div class="container">
-        <!-- Features Section -->
-        <div class="row flex-wrap g-5 py-5">  
-            <!-- Storytellers-->
-            <div class="col-6">
-                <div class="d-flex flex-col shadow-sm card p-5 h-100">
-                    <div class="proposal-features card-body">
-                        <svg class="i-features" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                            <path fill="currentColor" d="M754.752 480H160a32 32 0 1 0 0 64h594.752L521.344 777.344a32 32 0 0 0 45.312 45.312l288-288a32 32 0 0 0 0-45.312l-288-288a32 32 0 1 0-45.312 45.312L754.752 480z"></path>
-                        </svg>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="fs-5 pt-1">We’re Storytellers</h3>
-                        <p>
-                            Your website isn’t just a digital space—it’s your stage, your story, and your way of connecting with your audience on a deeper level."
-                While others focus solely on aesthetics, we create immersive experiences that make your audience think, “Wow, I found my people.” From the first click to the final conversion, we’ll weave your brand’s narrative into every pixel, so your audience doesn’t just visit your site—they become part of your story.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Storytellers-->
-            <div class="col-6">
-                <div class="d-flex flex-col shadow-sm card p-5 h-100">
-                    <div class="proposal-features card-body">
-                        <svg class="i-features" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                            <path fill="currentColor" d="M754.752 480H160a32 32 0 1 0 0 64h594.752L521.344 777.344a32 32 0 0 0 45.312 45.312l288-288a32 32 0 0 0 0-45.312l-288-288a32 32 0 1 0-45.312 45.312L754.752 480z"></path>
-                        </svg>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="fs-5 pt-1">We Obsess Over Details</h3>
-                        <p>
-                            From hover effects to button placement, we leave no pixel unpolished." That weird glitch that makes visitors question your professionalism? Not on our watch. We fine-tune every interaction to perfection because we know the devil—and the magic—is in the details.
-                        </p>
-                    </div>
-                </div>
-            </div>                      
-            <!-- Woo Woo-->
-            <div class="col-6">
-                <div class="d-flex flex-col shadow-sm card p-5 h-100">
-                    <div class="proposal-features card-body">
-                        <svg class="i-features" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                            <path fill="currentColor" d="M754.752 480H160a32 32 0 1 0 0 64h594.752L521.344 777.344a32 32 0 0 0 45.312 45.312l288-288a32 32 0 0 0 0-45.312l-288-288a32 32 0 1 0-45.312 45.312L754.752 480z"></path>
-                        </svg>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="fs-5 pt-1">We’re a Little Woo-Woo (In the Best Way)</h3>
-                        <p>
-                            "Your brand’s vibe matters, and we know how to channel it into a digital experience that feels like magic." Whether it’s aligning the flow of your site with your brand’s energy or ensuring every touchpoint feels like ‘you,’ we turn ideas into experiences your audience won’t forget.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Make it work-->
-            <div class="col-6">
-                <div class="d-flex flex-col shadow-sm card p-5 h-100">
-                    <div class="proposal-features card-body">
-                        <svg class="i-features" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                            <path fill="currentColor" d="M754.752 480H160a32 32 0 1 0 0 64h594.752L521.344 777.344a32 32 0 0 0 45.312 45.312l288-288a32 32 0 0 0 0-45.312l-288-288a32 32 0 1 0-45.312 45.312L754.752 480z"></path>
-                        </svg>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="fs-5 pt-1">We Make It Work</h3>
-                        <p>
-                            Gorgeous designs are useless without functionality. We deliver both, effortlessly." Where others might leave you with a beautiful but clunky site, we ensure everything runs like a dream—from page load speeds to seamless integrations.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    </template>
+    <div id="dynamic-solutions" class="dynamic-content-container row flex-wrap g-5 py-5"></div> <!-- Container for JS Injection -->
+  </div>
+</section>
