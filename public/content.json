@@ -192,7 +192,7 @@
   },
   "solutions": {
     "wellness": {
-      "presence": {
+      "listening": {
         "title": "Cost Concerns",
         "content": "We ensure value for every dollar you spend.",
         "svg": "<path fill='currentColor' d='...' />"

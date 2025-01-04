@@ -106,6 +106,7 @@ header {
 /* Hide dynamic rows by default */
 .dynamic-content {
   display: none !important;
+  display: block !important;
 }
 
 /*Hero section homepagew*/

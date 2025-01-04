@@ -3,96 +3,94 @@ async function fetchContent() {
     const response = await fetch("/content.json");
     return await response.json();
   } catch (error) {
+    console.error("❌ Error loading content:", error);
     return {};
   }
 }
 
 async function preloadContent(contentData) {
   const sections = {
-    hero: { containerId: "dynamic-hero", templateId: "hero-template" },
-    introduction: {
-      containerId: "dynamic-introduction",
-      templateId: "introduction-template",
-    },
-    problems: {
-      containerId: "dynamic-problems",
-      templateId: "loop-i-r-arrow-chart-4",
-      hasCharts: true,
-    },
-    features: {
-      containerId: "dynamic-features",
-      templateId: "loop-i-box-blue",
-    },
-    solutions: {
-      containerId: "dynamic-solutions",
-      templateId: "loop-i-box-blue",
-    },
-    objections: {
-      containerId: "dynamic-objections",
-      templateId: "loop-i-box-blue",
-    },
+      hero: { containerId: "dynamic-hero", templateId: "hero-template" },
+      introduction: { containerId: "dynamic-introduction", templateId: "introduction-template" },
+      problems: { containerId: "dynamic-problems", templateId: "loop-i-r-arrow-chart-4", hasCharts: true },
+      features: { containerId: "dynamic-features", templateId: "loop-i-box-blue" },
+      solutions: { containerId: "dynamic-solutions", templateId: "loop-i-box-blue" },
+      objections: { containerId: "dynamic-objections", templateId: "loop-i-box-blue" }
   };
 
   for (const [key, config] of Object.entries(sections)) {
-    const container = document.getElementById(config.containerId);
-    const template = document.getElementById(config.templateId);
+      const container = document.getElementById(config.containerId);
+      const template = document.getElementById(config.templateId);
 
-    if (!container || !template) continue;
+      if (!container || !template) continue;
 
-    container.innerHTML = ""; // Clear previous content
+      container.innerHTML = ''; // Clear previous content
 
-    if (!contentData[key]) continue;
+      if (!contentData[key]) continue;
 
-    Object.entries(contentData[key]).forEach(([industry, items]) => {
-      Object.entries(items).forEach(([itemKey, data]) => {
-        if (!data.title || !data.content) return;
+      Object.entries(contentData[key]).forEach(([industry, items]) => {
+          Object.entries(items).forEach(([itemKey, data]) => {
+              if (!data.title || !data.content) return;
 
-        // **Clone the correct template**
-        let sectionElement = template.content.cloneNode(true);
-        let dynamicDiv =
-          sectionElement.querySelector(".dynamic-content") ||
-          sectionElement.firstElementChild;
+              let sectionElement = template.content.cloneNode(true);
+              let dynamicDiv = sectionElement.querySelector(".dynamic-content") || sectionElement.firstElementChild;
 
-        if (!dynamicDiv) return;
+              if (!dynamicDiv) {
+                  console.error(`❌ Template for '${key}' is missing .dynamic-content!`);
+                  return;
+              }
 
-        // **Set filtering attributes**
-        dynamicDiv.setAttribute("data-industry", industry);
-        dynamicDiv.setAttribute("data-key", itemKey);
+              // **Set filtering attributes**
+              dynamicDiv.setAttribute("data-industry", industry || "undefined-industry");
+              dynamicDiv.setAttribute("data-key", itemKey || "undefined-key");
 
-        // **Populate content**
-        let titleElement = dynamicDiv.querySelector(
-          ".hero-title, .section-title",
-        );
-        let contentElement = dynamicDiv.querySelector(
-          ".hero-content, .section-content",
-        );
+              let titleElement = dynamicDiv.querySelector(".hero-title, .section-title");
+              let contentElement = dynamicDiv.querySelector(".hero-content, .section-content");
 
-        if (titleElement) titleElement.textContent = data.title;
-        if (contentElement)
-          contentElement.innerHTML = Array.isArray(data.content)
-            ? data.content.join(" ")
-            : data.content;
+              if (titleElement) titleElement.textContent = data.title;
+              if (contentElement) contentElement.innerHTML = Array.isArray(data.content) ? data.content.join(" ") : data.content;
 
-        // **If the section has charts, populate them**
-        if (config.hasCharts && data.charts) {
-          let chartContainers = dynamicDiv.querySelectorAll(".col-md-3 canvas");
+              // **If the section has charts, populate them**
+              if (config.hasCharts) {
+                  let chartContainer = dynamicDiv.querySelector(".row-chart-4");
 
-          data.charts.forEach((chartData, index) => {
-            if (chartContainers[index]) {
-              chartContainers[index].setAttribute("id", chartData.id);
-              let chartTitle = chartContainers[index].nextElementSibling;
-              if (chartTitle) chartTitle.textContent = chartData.label;
-              initializeChart(chartData);
-            }
+                  if (data.charts && data.charts.length > 0) {
+                      let chartHTML = "";
+                      data.charts.forEach((chartData, index) => {
+                          chartHTML += `
+                              <div class="col-md-3">
+                                  <canvas id="${chartData.id}"></canvas>
+                                  <p class="chart-title">${chartData.label}</p>
+                              </div>
+                          `;
+                          initializeChart(chartData);
+                      });
+
+                      chartContainer.innerHTML = chartHTML;
+                  } else {
+                      // **Hide chart section if no charts exist**
+                      chartContainer.style.display = "none";
+                  }
+              }
+
+              container.appendChild(sectionElement);
           });
-        }
-
-        // **Append to container**
-        container.appendChild(sectionElement);
       });
-    });
   }
 }
+
+// **Initialize Chart.js for dynamic charts**
+function initializeChart(chartConfig) {
+  const ctx = document.getElementById(chartConfig.id);
+  if (ctx) {
+      new Chart(ctx, {
+          type: chartConfig.type || 'bar',
+          data: chartConfig.data,
+          options: chartConfig.options || {}
+      });
+  }
+}
+
 
 // **Initialize Chart.js for dynamic charts**
 function initializeChart(chartConfig) {
@@ -101,7 +99,7 @@ function initializeChart(chartConfig) {
     new Chart(ctx, {
       type: chartConfig.type || "bar",
       data: chartConfig.data,
-      options: chartConfig.options || {},
+      options: chartConfig.options || {}
     });
   }
 }
